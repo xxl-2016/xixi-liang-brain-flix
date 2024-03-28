@@ -1,0 +1,85 @@
+// Desktop and Tablet Breakpoint Section
+$mobile-breakpoint:320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// Font Weight Section
+$font-weight-regular: 400;
+$font-weight-demi: 600;
+$font-weight-bold: 700;
+
+// Mobiel Text Section
+$mobile-font-size-header: 24px;
+$mobile-font-size-section: 12px;
+$mobile-font-size-subheader: 13px;
+$mobile-font-size-body: 13px;
+$mobile-font-size-label: 10px;
+
+// Desktop Text Section
+$desktop-font-size-header: 33px;
+$desktop-font-size-section: 12px;
+$desktop-font-size-subheader: 14px;
+$desktop-font-size-body: 14px;
+$desktop-font-size-label: 12px;
+
+// Color Section
+$brainFlix-black: #323232;
+$brainFlix-blue: #0095FF;
+$silver: #AFAFAF;
+$white: #FFFFFF;
+$brainFlix-darkblack: #000000;
+$brainFlix-darkblue: #0065AD;
+$mercury: #E1E1E1;
+$alabaster: #FAFAFA;
+
+// Mobile Padding Section:
+$mobile-padding-before-headlines: 24px;
+$mobile-padding-after-headlines: 16px;
+$mobile-padding-bnetween-components: 16px;
+
+// Desktop Padding Section:
+$desktop-padding-before-headlines: 36px;
+$desktop-padding-after-headlines: 24px;
+$desktop-padding-between-components: 24px;
+
+// Logo Section:
+$logo-width: 120px;
+$logo-height: 25px;
+
+// Button Section:
+$button-height: 40px;
+$button-width: 150px;
+$button-radius: 4px;
+$button-padding: 32px;
+
+// Scrubbing Control Section:
+$control-opacity: 50%;
+$control-icon-size: 16px;
+
+// Form Section
+$form-radius: 4px;
+$form-border: 1px;
+$form-label: 4px;
+$form-focus-border: 2px;
+
+// Mobile Form Section:
+$mobile-form-height: 36px;
+$mobile-form-width: 240px;
+$mobile-form-padding: 12px;
+$mobile-form-label: 4px;
+
+// Desktop Form Section:
+$desktop-form-height: 40px;
+$desktop-form-width: 240px;
+$desktop-form-padding: 16px;
+
+// Divider Section:
+$divider-size: 1px;
+
+// Image Section:
+$image-radius: 4px;
+
+// Avatar Section:
+$mobile-avatar-width-height: 36px;
+$desktop-avatar-width-height: 40px;
+$avatar-radius: 50%;
