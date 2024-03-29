@@ -76,6 +76,22 @@
       top: 1.3rem;
     }
   }
+  @include desktop {
+    &__logo {
+      margin-left: 6rem;
+    }
+    &__search {
+      justify-content: flex-end;
+      position: relative;
+      right: 12%;
+      &--input {
+        width: 18rem;
+      }
+    }
+    &__avatar {
+      right: 6rem;
+    }
+  }
 }
 
 .video {
@@ -352,6 +368,47 @@
       }
     }
   }
+  @include desktop {
+    margin-bottom: 6rem;
+    &__heading {
+      &--text {
+        margin: $desktop-padding-before-headlines 0 1rem 6rem;
+      }
+    }
+    &__divider {
+      margin: $desktop-padding-after-headlines 0 0 6rem;
+    }
+    &__detail {
+      margin: $desktop-padding-after-headlines 2rem 0 6rem;
+    }
+    &__description {
+      margin: $desktop-padding-after-headlines 2rem 0 6rem;
+      &--amount {
+        margin-top: 2rem;
+      }
+    }
+    &__form {
+      margin: $desktop-padding-after-headlines 2rem 0 6rem;
+    }
+    &__card {
+      margin: $desktop-padding-after-headlines 0 0 6rem;
+      justify-content: flex-start;
+      &--info {
+        width: 88%;
+        margin-left: $desktop-padding-between-components;
+      }
+      &--text {
+        &-detail {
+          width: 88%;
+          margin-left: $desktop-padding-between-components;
+          left: 5%;
+        }
+      }
+      &--divider {
+        margin-top: 2rem;
+      }
+    }
+  }
 }
 
 .next {
@@ -424,5 +481,29 @@
         }
       }
     }
+  }
+  @include desktop {
+    width: 90%;
+    border-left: $mercury solid $form-border;
+    margin-right: 6rem;
+    padding-top: 1rem;
+    &__videos {
+      &--video {
+        &-image {
+          width: 30%;
+          margin-bottom: 0;
+        }
+        &-text {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  @include desktop {
+    display: flex;
+    justify-content: flex-start;
   }
 }
