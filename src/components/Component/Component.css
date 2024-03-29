@@ -85,4 +85,218 @@
     right: 5.5%;
     top: 11.5%;
   }
+}
+
+.comment {
+  text-align: left;
+  color: #323232;
+}
+.comment__divider {
+  height: 1px;
+  background-color: #E1E1E1;
+  margin: 16px;
+}
+.comment__heading--text {
+  color: #323232;
+  text-align: left;
+}
+@media screen and (min-width: 320px) {
+  .comment__heading--text {
+    font-size: 24px;
+    margin: 16px;
+  }
+  .comment__detail {
+    margin: 16px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .comment__detail--author {
+    width: 50%;
+    text-align: left;
+  }
+  .comment__detail--author-name {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .comment__detail--author-time {
+    color: #AFAFAF;
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 16px;
+  }
+  .comment__detail--watch {
+    width: 50%;
+  }
+  .comment__detail--watch-view {
+    display: flex;
+  }
+  .comment__detail--watch-view-amount {
+    color: #AFAFAF;
+    font-weight: 400;
+    font-size: 13px;
+    margin-left: 16px;
+  }
+  .comment__detail--watch-like {
+    display: flex;
+    margin-top: 16px;
+  }
+  .comment__detail--watch-like-amount {
+    color: #AFAFAF;
+    font-weight: 400;
+    font-size: 13px;
+    margin-left: 16px;
+  }
+  .comment__description {
+    margin: 16px;
+  }
+  .comment__description--text {
+    font-size: 13px;
+  }
+  .comment__description--amount {
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .comment__form {
+    margin: 16px;
+  }
+  .comment__form--avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #E1E1E1;
+    background-image: url(../../assets/Images/Mohan-muruge.jpg);
+    background-size: cover;
+    position: absolute;
+    margin-top: 1rem;
+  }
+  .comment__form--input {
+    position: relative;
+    left: 20%;
+  }
+  .comment__form--input-label {
+    color: #AFAFAF;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .comment__form--input-add {
+    width: 80%;
+    height: 6rem;
+    margin-top: 0.5rem;
+    outline: none;
+    border: #E1E1E1 solid 1px;
+    border-radius: 4px;
+    background-color: #FAFAFA;
+  }
+  .comment__form--input-add::-moz-placeholder {
+    color: #323232;
+    padding: 0.75rem 0 0 0.75rem;
+  }
+  .comment__form--input-add::placeholder {
+    color: #323232;
+    padding: 0.75rem 0 0 0.75rem;
+  }
+  .comment__form--button {
+    position: relative;
+    left: 20%;
+  }
+  .comment__form--button-comment {
+    width: 80%;
+    height: 40px;
+    background-color: #0095FF;
+    background-image: url(../../assets/Icons/add_comment.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem;
+    border: 0;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .comment__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 16px;
+  }
+  .comment__card--avatar {
+    min-width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #E1E1E1;
+    background-size: cover;
+  }
+  .comment__card--info {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .comment__card--info-name {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .comment__card--info-time {
+    font-size: 13px;
+    font-weight: 400;
+    color: #AFAFAF;
+  }
+  .comment__card--text-detail {
+    width: 80%;
+    position: relative;
+    left: 20%;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .comment__card--divider {
+    width: 100%;
+    height: 1px;
+    background-color: #E1E1E1;
+    margin: 16px 0 0 0;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .next__heading {
+    text-align: left;
+    margin: 16px 0 0 16px;
+  }
+  .next__heading--text {
+    color: #AFAFAF;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .next__videos {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  .next__videos--video {
+    display: flex;
+  }
+  .next__videos--video-image {
+    background-color: #E1E1E1;
+    border-radius: 4px;
+    width: 30%;
+    margin: 16px 16px 0 16px;
+  }
+  .next__videos--video-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .next__videos--video-text__title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 16px;
+  }
+  .next__videos--video-text__description {
+    font-size: 13px;
+    font-weight: 400;
+    color: #323232;
+  }
 }/*# sourceMappingURL=Component.css.map */
