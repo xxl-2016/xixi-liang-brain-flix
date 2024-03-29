@@ -56,7 +56,7 @@ function Component({ currentVideo, videos }) {
         <div className="comment__heading">
           <h2 className="comment__heading--text">{currentVideo.title}</h2>
         </div>
-        <div className="comment__divider"></div>
+        <div className="comment__divider comment__divider-first"></div>
         <div className="comment__detail">
           <div className="comment__detail--author">
             <h3 className="comment__detail--author-name">
@@ -111,8 +111,7 @@ function Component({ currentVideo, videos }) {
               cols="30"
               rows="10"
               placeholder="Add a new comment"
-            >
-            </textarea>
+            ></textarea>
           </div>
           <div className="comment__form--button">
             <button className="comment__form--button-comment">COMMENT</button>

@@ -45,3 +45,24 @@
     @content;
   }
 }
+
+@mixin avatar {
+  width: $mobile-avatar-width-height;
+  height: $mobile-avatar-width-height;
+  border-radius: $avatar-radius;
+  background-color: $mercury;
+}
+
+@mixin mobile-button {
+  width: 100%;
+  height: $button-height;
+  background-color: $brainFlix-blue;
+  background-repeat: no-repeat;
+  background-position: 1rem;
+  background-size: 1.3rem;
+  border: 0;
+  border-radius: $button-radius;
+  color: $white;
+  font-size: $mobile-font-size-body;
+  font-weight: $font-weight-demi;
+}

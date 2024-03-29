@@ -8,7 +8,7 @@
     justify-content: center;
     flex-direction: column;
     &__logo {
-      padding: $mobile-padding-after-headlines;
+      margin: $mobile-padding-after-headlines;
       &--image {
         width: $logo-width;
         height: $logo-height;
@@ -32,31 +32,64 @@
         }
       }
       &--button {
-        width: 100%;
-        height: $button-height;
-        background-color: $brainFlix-blue;
+        @include mobile-button;
         background-image: url(../../assets/Icons/upload.svg);
-        background-repeat: no-repeat;
-        background-position: 1rem;
-        border: 0;
-        border-radius: $button-radius;
         margin-top: $mobile-padding-after-headlines;
-        color: $white;
-        font-size: $mobile-font-size-label;
-        font-weight: $font-weight-bold;
       }
     }
     &__avatar {
-      width: $mobile-avatar-width-height;
-      height: $mobile-avatar-width-height;
-      border-radius: $avatar-radius;
+      @include avatar;
       background-image: url(../../assets/Images/Mohan-muruge.jpg);
       background-size: cover;
-      background-color: $mercury;
       position: absolute;
-      right: 5.5%;
-      top: 11.5%;
+      right: 1rem;
+      top: 3.6rem;
     }
+  }
+  @include tablet {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    &__logo {
+      margin: $desktop-padding-after-headlines;
+    }
+    &__search {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-top: 1.2rem;
+      &--input {
+        height: $button-height;
+        width: 15rem;
+        margin-left: $desktop-padding-before-headlines;
+      }
+      &--button {
+        margin: 0;
+        width: 12rem;
+        margin-left: $desktop-padding-before-headlines;
+      }
+    }
+    &__avatar {
+      right: $desktop-padding-after-headlines;
+      top: 1.3rem;
+    }
+  }
+}
+
+.video {
+  background-color: $brainFlix-darkblack;
+  width: 100%;
+  &__current {
+    width: 100%;
+    height: 100%;
+  }
+  @include mobile {
+    margin-top: $mobile-padding-after-headlines;
+  }
+  @include tablet {
+    margin-top: 0;
   }
 }
 
@@ -82,9 +115,9 @@
       }
     }
     &__detail {
-      margin: $mobile-padding-after-headlines;
       display: flex;
       justify-content: flex-start;
+      margin: $mobile-padding-after-headlines;
       &--author {
         width: 50%;
         text-align: left;
@@ -136,25 +169,24 @@
     &__form {
       margin: $mobile-padding-after-headlines;
       &--avatar {
-        width: $mobile-avatar-width-height;
-        height: $mobile-avatar-width-height;
-        border-radius: $avatar-radius;
-        background-color: $mercury;
+        @include avatar;
         background-image: url(../../assets/Images/Mohan-muruge.jpg);
         background-size: cover;
         position: absolute;
         margin-top: 1rem;
       }
       &--input {
-        position: relative;
-        left: 20%;
         &-label {
+          position: relative;
+          left: 20%;
           color: $silver;
           font-size: $mobile-font-size-body;
           font-weight: $font-weight-demi;
         }
         &-add {
           width: 80%;
+          position: relative;
+          left: 20%;
           height: 6rem;
           margin-top: 0.5rem;
           outline: none;
@@ -168,21 +200,13 @@
         }
       }
       &--button {
-        position: relative;
-        left: 20%;
         &-comment {
+          @include mobile-button;
           width: 80%;
-          height: $button-height;
-          background-color: $brainFlix-blue;
+          position: relative;
+          left: 20%;
           background-image: url(../../assets/Icons/add_comment.svg);
-          background-repeat: no-repeat;
-          background-position: 1rem;
-          border: 0;
-          border-radius: $button-radius;
           margin-top: $mobile-padding-after-headlines;
-          color: $white;
-          font-size: $mobile-font-size-body;
-          font-weight: $font-weight-demi;
         }
       }
     }
@@ -192,10 +216,7 @@
       justify-content: space-between;
       margin: $mobile-padding-after-headlines;
       &--avatar {
-        min-width: $mobile-avatar-width-height;
-        height: $mobile-avatar-width-height;
-        border-radius: $avatar-radius;
-        background-color: $mercury;
+        @include avatar;
         background-size: cover;
       }
       &--info {
@@ -227,6 +248,107 @@
         height: $divider-size;
         background-color: $mercury;
         margin: $mobile-padding-after-headlines 0 0 0;
+      }
+    }
+  }
+  @include tablet {
+    &__divider-first {
+      display: none;
+    }
+    &__divider {
+      margin: $desktop-padding-after-headlines;
+    }
+    &__heading {
+      &--text {
+        margin: $desktop-padding-after-headlines;
+        font-size: $desktop-font-size-header;
+      }
+    }
+    &__detail {
+      display: flex;
+      margin: $desktop-padding-after-headlines;
+      &--author {
+        display: flex;
+        width: 50%;
+        justify-content: flex-start;
+        &-name {
+          font-size: $desktop-font-size-body;
+        }
+        &-time {
+          font-size: $desktop-font-size-body;
+          margin: 0;
+          margin-left: $desktop-padding-between-components;
+        }
+      }
+      &--watch {
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        &-view {
+          &-amount {
+            font-size: $desktop-font-size-body;
+          }
+        }
+        &-like {
+          margin: 0;
+          margin-left: $desktop-padding-between-components;
+          &-amount {
+            font-size: $desktop-font-size-body;
+          }
+        }
+      }
+    }
+    &__description {
+      margin: $desktop-padding-after-headlines;
+      &--text {
+        font-size: $desktop-font-size-body;
+        line-height: 1.2rem;
+      }
+      &--amount {
+        font-size: $desktop-font-size-body;
+        font-weight: $font-weight-bold;
+      }
+    }
+    &__form {
+      margin: $desktop-padding-after-headlines;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      &--avatar {
+        position: relative;
+      }
+      &--input {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 70%;
+        &-label {
+          left: 5%;
+        }
+        &-add {
+          width: 100%;
+          height: $button-height;
+          font-size: $desktop-font-size-label;
+          left: 5%;
+        }
+      }
+      &--button {
+        width: 30%;
+        margin: 0;
+      }
+    }
+    &__card {
+      margin: $desktop-padding-after-headlines;
+      &--info {
+        width: 93%;
+      }
+      &--text {
+        &-detail {
+          width: 93%;
+          font-size: $desktop-font-size-body;
+          left: 7%;
+        }
       }
     }
   }
@@ -273,6 +395,31 @@
             font-size: $mobile-font-size-body;
             font-weight: $font-weight-regular;
             color: $brainFlix-black;
+          }
+        }
+      }
+    }
+  }
+  @include tablet {
+    &__heading {
+      margin: $desktop-padding-after-headlines 0 0
+        $desktop-padding-after-headlines;
+      &--text {
+        font-size: $desktop-font-size-subheader;
+      }
+    }
+    &__videos {
+      &--video {
+        &-image {
+          width: 15%;
+          margin: $desktop-padding-between-components
+            $desktop-padding-between-components 0
+            $desktop-padding-between-components;
+        }
+        &-text {
+          &__title {
+            margin-top: $desktop-padding-after-headlines;
+            width: 80%;
           }
         }
       }
