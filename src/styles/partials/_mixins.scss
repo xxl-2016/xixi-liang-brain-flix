@@ -65,4 +65,8 @@
   color: $white;
   font-size: $mobile-font-size-body;
   font-weight: $font-weight-demi;
+  &:hover {
+    background-color: $brainFlix-darkblue;
+    cursor: pointer;
+  }
 }

@@ -1,54 +1,17 @@
 import React, { useState } from "react";
 import "./Component.css";
-import logo from "../../assets/Logo/BrainFlix-logo.svg";
-import uploadIcon from "../../assets/Icons/upload.svg";
-import searchIcon from "../../assets/Icons/search.svg";
 import views from "../../assets/Icons/views.svg";
 import likes from "../../assets/Icons/likes.svg";
-import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import videoData from "../../data/video.json";
 import videoDetailData from "../../data/video-details.json";
 import { type } from "@testing-library/user-event/dist/type";
-import { BrainFlixApi } from "../../api/BrainFlixApi";
-
-// store api key
-const api = new BrainFlixApi("c31ccc68-d2c8-4700-808f-71f5037605c2");
 
 // Date Format Function
 function formattedDate(timeStamp) {
   return Intl.DateTimeFormat("en-US").format(timeStamp);
 }
 
-function Header() {
-  return (
-    <header className="header">
-      <div className="header__logo">
-        <img className="header__logo--image" src={logo} alt="logo image" />
-      </div>
-      <div className="header__search">
-        <input
-          className="header__search--input"
-          type="text"
-          placeholder="Search"
-        />
-        <button className="header__search--button">UPLOAD</button>
-      </div>
-      <div className="header__avatar"></div>
-    </header>
-  );
-}
-
-function Video(props) {
-  return (
-    <>
-      <div className="video">
-        <video className="video__current" src={props.video}></video>
-      </div>
-    </>
-  );
-}
-
-function Component({ currentVideo, videos }) {
+function Component({ currentVideo, nextVideos, selectVideo}) {
   return (
     <>
       <section className="content">
@@ -142,8 +105,8 @@ function Component({ currentVideo, videos }) {
             <h2 className="next__heading--text">NEXT VIDEOS</h2>
           </div>
           <div className="next__videos">
-            {videos.map((video) => (
-              <div key={video.id} className="next__videos--video">
+            {nextVideos.map((video) => (
+              <div key={video.id} className="next__videos--video" onClick={() => selectVideo(video)}>
                 <img
                   className="next__videos--video-image"
                   src={video.image}
@@ -166,6 +129,4 @@ function Component({ currentVideo, videos }) {
   );
 }
 
-export { Header };
-export { Video };
-export { Component };
+export default Component;
