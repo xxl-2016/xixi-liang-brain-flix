@@ -9,6 +9,7 @@
       flex-direction: column;
       &__logo {
         margin: $mobile-padding-after-headlines;
+        cursor: pointer;
         &--image {
           width: $logo-width;
           height: $logo-height;
@@ -79,6 +80,7 @@
     @include desktop {
       &__logo {
         margin-left: 6rem;
+        z-index: 10;
       }
       &__search {
         justify-content: flex-end;

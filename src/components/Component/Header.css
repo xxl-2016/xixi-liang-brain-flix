@@ -34,6 +34,7 @@
   }
   .header__logo {
     margin: 16px;
+    cursor: pointer;
   }
   .header__logo--image {
     width: 120px;
@@ -126,6 +127,7 @@
 @media screen and (min-width: 1280px) {
   .header__logo {
     margin-left: 6rem;
+    z-index: 10;
   }
   .header__search {
     justify-content: flex-end;

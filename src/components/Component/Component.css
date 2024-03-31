@@ -123,14 +123,17 @@
     border: #E1E1E1 solid 1px;
     border-radius: 4px;
     background-color: #FAFAFA;
+    outline: none;
+    padding: 0.75rem 0 0 0.75rem;
+  }
+  .comment__form--input-add:focus {
+    border: #323232 solid 1px;
   }
   .comment__form--input-add::-moz-placeholder {
     color: #323232;
-    padding: 0.75rem 0 0 0.75rem;
   }
   .comment__form--input-add::placeholder {
     color: #323232;
-    padding: 0.75rem 0 0 0.75rem;
   }
   .comment__form--button-comment {
     width: 100%;
@@ -350,6 +353,7 @@
   }
   .next__videos--video {
     display: flex;
+    cursor: pointer;
   }
   .next__videos--video-image {
     background-color: #E1E1E1;
@@ -367,11 +371,13 @@
     font-weight: 600;
     color: #000000;
     margin-top: 16px;
+    margin-right: 16px;
   }
   .next__videos--video-text__description {
     font-size: 13px;
     font-weight: 400;
     color: #323232;
+    margin-right: 16px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -387,7 +393,7 @@
   }
   .next__videos--video-text__title {
     margin-top: 24px;
-    width: 80%;
+    width: 92%;
   }
 }
 @media screen and (min-width: 1280px) {

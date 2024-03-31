@@ -102,10 +102,14 @@
           border: $mercury solid $form-border;
           border-radius: $form-radius;
           background-color: $alabaster;
+          outline: none;
+          &:focus {
+            border: $brainFlix-black solid $form-border;
+          }
           &::placeholder {
             color: $brainFlix-black;
-            padding: 0.75rem 0 0 0.75rem;
           }
+          padding: 0.75rem 0 0 0.75rem;
         }
       }
       &--button {
@@ -323,6 +327,7 @@
       margin-bottom: 2rem;
       &--video {
         display: flex;
+        cursor: pointer;
         &-image {
           background-color: $mercury;
           border-radius: $image-radius;
@@ -340,11 +345,13 @@
             font-weight: $font-weight-demi;
             color: $brainFlix-darkblack;
             margin-top: $mobile-padding-after-headlines;
+            margin-right: $mobile-padding-after-headlines;
           }
           &__description {
             font-size: $mobile-font-size-body;
             font-weight: $font-weight-regular;
             color: $brainFlix-black;
+            margin-right: $mobile-padding-after-headlines;
           }
         }
       }
@@ -369,7 +376,7 @@
         &-text {
           &__title {
             margin-top: $desktop-padding-after-headlines;
-            width: 80%;
+            width: 92%;
           }
         }
       }

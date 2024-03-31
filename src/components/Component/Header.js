@@ -3,10 +3,18 @@ import "./Header.css";
 import logo from "../../assets/Logo/BrainFlix-logo.svg";
 
 function Header() {
+  const handleLogoClick = () => {
+    window.location.href = "../../../public/index.html";
+  };
   return (
     <header className="header">
       <div className="header__logo">
-        <img className="header__logo--image" src={logo} alt="logo image" />
+        <img
+          className="header__logo--image"
+          src={logo}
+          alt="logo image"
+          onClick={handleLogoClick}
+        />
       </div>
       <div className="header__search">
         <input
