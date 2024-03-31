@@ -18,6 +18,10 @@ class BrainFlixApi {
         console.log(error);
       }
     }
+
+    async postVideos (id) {
+      const url = `${this.baseUrl}videos?api_key=${this.apiKey}`;
+    }
   }
 
   export { BrainFlixApi };
