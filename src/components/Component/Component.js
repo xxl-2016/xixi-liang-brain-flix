@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import "./Component.css";
 import views from "../../assets/Icons/views.svg";
 import likes from "../../assets/Icons/likes.svg";
@@ -110,7 +110,7 @@ function Component({ currentVideo, nextVideos, selectVideo}) {
           </div>
           <div className="next__videos">
             {nextVideos.map((video) => (
-              <div key={video.id} className="next__videos--video" onClick={() => selectVideo(video)}>
+              <div key={video.id} className="next__videos--video" onClick={() => selectVideo(video.id)}>
                 <img
                   className="next__videos--video-image"
                   src={video.image}

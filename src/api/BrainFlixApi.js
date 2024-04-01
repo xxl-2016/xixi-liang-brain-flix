@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Component from "../components/Component/Component";
 import axios from 'axios';
 
