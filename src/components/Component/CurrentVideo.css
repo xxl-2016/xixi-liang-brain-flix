@@ -41,7 +41,13 @@
     margin-top: 0;
   }
   .video__current {
-    width: 66.95vh;
-    height: 37.7vh;
+    width: 71.1vh;
+    height: 40vh;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .video__current {
+    width: 106.7vh;
+    height: 60vh;
   }
 }/*# sourceMappingURL=CurrentVideo.css.map */

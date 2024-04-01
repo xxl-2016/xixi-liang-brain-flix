@@ -14,8 +14,14 @@
   @include tablet {
     margin-top: 0;
     &__current {
-      width: 66.95vh;
-      height: 37.7vh;
+      width: 71.1vh;
+      height: 40vh;
+    }
+  }
+  @include desktop {
+    &__current {
+      width: 106.7vh;
+      height: 60vh;
     }
   }
 }
