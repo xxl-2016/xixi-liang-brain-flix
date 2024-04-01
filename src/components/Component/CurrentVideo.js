@@ -7,7 +7,12 @@ function CurrentVideo(props) {
   return (
     <>
       <div className="video">
-        <video className="video__current" src={props.video} poster={props.image} controls></video>
+        <video
+          className="video__current"
+          src={props.currentVideo.video}
+          poster={props.currentVideo.image}
+          controls
+        ></video>
       </div>
     </>
   );

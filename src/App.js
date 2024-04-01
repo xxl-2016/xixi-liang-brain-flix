@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <CurrentVideo video={currentVideo} />
+      <CurrentVideo currentVideo={currentVideo} />
       <Component
         currentVideo={currentVideo}
         nextVideos={nextVideos}
