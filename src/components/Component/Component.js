@@ -5,6 +5,10 @@ import likes from "../../assets/Icons/likes.svg";
 import videoData from "../../data/video.json";
 import videoDetailData from "../../data/video-details.json";
 import { type } from "@testing-library/user-event/dist/type";
+import { BrainFlixApi } from "../../api/BrainFlixApi";
+
+// Store API key
+const api = new BrainFlixApi("c31ccc68-d2c8-4700-808f-71f5037605c2");
 
 // Date Format Function
 function formattedDate(timeStamp) {
