@@ -41,7 +41,7 @@
     margin-top: 0;
   }
   .video__current {
-    min-height: 100%;
-    width: 56.25%;
+    width: 66.95vh;
+    height: 37.7vh;
   }
 }/*# sourceMappingURL=CurrentVideo.css.map */
