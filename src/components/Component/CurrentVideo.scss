@@ -13,5 +13,9 @@
   }
   @include tablet {
     margin-top: 0;
+    &__current {
+      min-height: 100%;
+      width: calc(100% * 9 /16);
+    }
   }
 }

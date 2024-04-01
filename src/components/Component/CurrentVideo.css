@@ -40,4 +40,8 @@
   .video {
     margin-top: 0;
   }
+  .video__current {
+    min-height: 100%;
+    width: 56.25%;
+  }
 }/*# sourceMappingURL=CurrentVideo.css.map */
