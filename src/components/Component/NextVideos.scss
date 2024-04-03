@@ -1,0 +1,102 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.next {
+  @include mobile {
+    &__heading {
+      text-align: left;
+      margin: $mobile-padding-after-headlines 0 0
+        $mobile-padding-after-headlines;
+      &--text {
+        color: $silver;
+        font-size: $mobile-font-size-subheader;
+        font-weight: $font-weight-demi;
+      }
+    }
+    &__videos {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: left;
+      margin-bottom: 2rem;
+      &--video {
+        display: flex;
+        cursor: pointer;
+        &-image {
+          background-color: $mercury;
+          border-radius: $image-radius;
+          width: 30%;
+          margin: $mobile-padding-between-components
+            $mobile-padding-between-components 0
+            $mobile-padding-between-components;
+        }
+        &-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          &__title {
+            font-size: $mobile-font-size-body;
+            font-weight: $font-weight-demi;
+            color: $brainFlix-darkblack;
+            margin-top: $mobile-padding-after-headlines;
+            margin-right: $mobile-padding-after-headlines;
+          }
+          &__description {
+            font-size: $mobile-font-size-body;
+            font-weight: $font-weight-regular;
+            color: $brainFlix-black;
+            margin-right: $mobile-padding-after-headlines;
+          }
+        }
+      }
+    }
+  }
+  @include tablet {
+    &__heading {
+      margin: $desktop-padding-after-headlines 0 0
+        $desktop-padding-after-headlines;
+      &--text {
+        font-size: $desktop-font-size-subheader;
+      }
+    }
+    &__videos {
+      &--video {
+        &-image {
+          width: 15%;
+          margin: $desktop-padding-between-components
+            $desktop-padding-between-components 0
+            $desktop-padding-between-components;
+        }
+        &-text {
+          &__title {
+            margin-top: $desktop-padding-after-headlines;
+            width: 92%;
+          }
+        }
+      }
+    }
+  }
+  @include desktop {
+    width: 90%;
+    border-left: $mercury solid $form-border;
+    margin-right: 6rem;
+    padding-top: 1rem;
+    &__videos {
+      &--video {
+        &-image {
+          width: 30%;
+          margin-bottom: 0;
+        }
+        &-text {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  @include desktop {
+    display: flex;
+    justify-content: flex-start;
+  }
+}

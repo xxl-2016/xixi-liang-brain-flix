@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./CurrentVideo.css";
-import videoData from "../../data/video.json";
-import videoDetailData from "../../data/video-details.json";
 
 function CurrentVideo(props) {
   return (
