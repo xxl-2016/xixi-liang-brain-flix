@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CurrentVideo.css";
 
-function CurrentVideo(props) {
+function CurrentVideo({ currentVideo }) {
   return (
     <>
       <div className="video">
         <video
           className="video__current"
-          src={props.currentVideo.video}
-          poster={props.currentVideo.image}
+          src={currentVideo.video}
+          poster={currentVideo.image}
           controls
         ></video>
       </div>

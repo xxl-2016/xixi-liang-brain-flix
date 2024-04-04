@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./HomePage.css";
-import CurrentVideo from "../components/Component/CurrentVideo";
-import videoDetailData from "../data/video-details.json";
+import "./UploadVideoPage.css";
 import { BrainFlixApi } from "../api/BrainFlixApi";
 
 // Store API key
