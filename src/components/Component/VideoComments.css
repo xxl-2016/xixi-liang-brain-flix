@@ -114,6 +114,7 @@
     font-weight: 600;
   }
   .comment__form--input-add {
+    resize: none;
     width: 80%;
     position: relative;
     left: 20%;
@@ -127,7 +128,7 @@
     padding: 0.75rem 0 0 0.75rem;
   }
   .comment__form--input-add:focus {
-    border: #323232 solid 1px;
+    border: #0095FF solid 1px;
   }
   .comment__form--input-add::-moz-placeholder {
     color: #323232;

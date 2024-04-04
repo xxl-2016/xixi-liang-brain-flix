@@ -9,7 +9,6 @@ function formattedDate(timeStamp) {
 }
 
 function VideoComments({ currentVideo }) {
-  console.log(currentVideo);
   return (
     <>
       {/* Comment Section */}

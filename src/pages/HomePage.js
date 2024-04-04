@@ -9,29 +9,27 @@ import { BrainFlixApi } from "../api/BrainFlixApi";
 const api = new BrainFlixApi("c31ccc68-d2c8-4700-808f-71f5037605c2");
 
 function HomePage() {
-  const [currentVideo, setCurrentVideo] = useState({});
-  const [currentVideoDetail, setCurrentVideoDetail] = useState({});
+  const [currentVideo, setCurrentVideo] = useState(null);
+  const [currentVideoDetail, setCurrentVideoDetail] = useState(null);
   const [nextVideos, setNextVideos] = useState([]);
 
   useEffect(() => {
     const fetchVideos = async () => {
       const fetchedVideos = await api.getVideos();
-      setCurrentVideo(fetchedVideos[0]);
+      const initialVideo = fetchedVideos[0];
+      setCurrentVideo(initialVideo);
       setNextVideos(
-        fetchedVideos.filter((video) => video.id != currentVideo.id)
+        fetchedVideos.filter((video) => video.id != initialVideo.id)
       );
+      const fetchedVideoDetail = await api.getVideo(initialVideo.id);
+      setCurrentVideoDetail(fetchedVideoDetail);
     };
     fetchVideos();
   }, []);
 
-  useEffect(() => {
-    const fetchVideoDetail = async () => {
-      const fetchedVideoDetail = await api.getVideo(currentVideo.id);
-      setCurrentVideoDetail(fetchedVideoDetail);
-    };
-
-    fetchVideoDetail();
-  }, [currentVideo.id]);
+  if (!currentVideo || !currentVideoDetail || nextVideos.length === 0) {
+    return <>Loading...</>;
+  }
 
   const handleVideoSelect = async (selectedVideo) => {
     try {
@@ -41,6 +39,7 @@ function HomePage() {
       setNextVideos(
         fetchedVideos.filter((video) => video.id != selectVideo.id)
       );
+      window.scrollTo(0, 0);
     } catch (error) {
       console.log(error);
     }

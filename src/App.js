@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Component/Header";
-import "./App.css";
 import HomePage from "./pages/HomePage";
 import UploadVideoPage from "./pages/UploadVideoPage";
 

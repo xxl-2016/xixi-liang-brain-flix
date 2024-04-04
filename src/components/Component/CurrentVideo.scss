@@ -2,6 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .video {
+  text-align: center;
   background-color: $brainFlix-darkblack;
   width: 100%;
   &__current {

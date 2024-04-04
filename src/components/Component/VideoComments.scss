@@ -92,6 +92,7 @@
             font-weight: $font-weight-demi;
           }
           &-add {
+            resize: none;
             width: 80%;
             position: relative;
             left: 20%;
@@ -103,7 +104,7 @@
             background-color: $alabaster;
             outline: none;
             &:focus {
-              border: $brainFlix-black solid $form-border;
+              border: $brainFlix-blue solid $form-border;
             }
             &::placeholder {
               color: $brainFlix-black;

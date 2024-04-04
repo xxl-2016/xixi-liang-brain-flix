@@ -46,7 +46,8 @@
   .next__videos--video-image {
     background-color: #E1E1E1;
     border-radius: 4px;
-    width: 30%;
+    width: 6rem;
+    height: auto;
     margin: 16px 16px 0 16px;
   }
   .next__videos--video-text {
@@ -75,8 +76,11 @@
   .next__heading--text {
     font-size: 14px;
   }
+  .next__videos--video {
+    width: 100%;
+  }
   .next__videos--video-image {
-    width: 15%;
+    width: 8rem;
     margin: 24px 24px 0 24px;
   }
   .next__videos--video-text__title {
@@ -92,7 +96,7 @@
     padding-top: 1rem;
   }
   .next__videos--video-image {
-    width: 30%;
+    width: 8rem;
     margin-bottom: 0;
   }
   .next__videos--video-text {
