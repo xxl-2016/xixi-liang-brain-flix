@@ -1,20 +1,15 @@
 import React from "react";
 import "./Header.css";
 import logo from "../../assets/Logo/BrainFlix-logo.svg";
+import { Link } from "react-router-dom";
 
 function Header() {
-  const handleLogoClick = () => {
-    window.location.href = "../../../public/index.html";
-  };
   return (
     <header className="header">
       <div className="header__logo">
-        <img
-          className="header__logo--image"
-          src={logo}
-          alt="logo image"
-          onClick={handleLogoClick}
-        />
+        <Link to="/">
+          <img className="header__logo--image" src={logo} alt="logo image" />
+        </Link>
       </div>
       <div className="header__search">
         <input
@@ -22,7 +17,9 @@ function Header() {
           type="text"
           placeholder="Search"
         />
-        <button className="header__search--button">UPLOAD</button>
+        <Link to="/upload">
+          <button className="header__search--button">UPLOAD</button>
+        </Link>
       </div>
       <div className="header__avatar"></div>
     </header>

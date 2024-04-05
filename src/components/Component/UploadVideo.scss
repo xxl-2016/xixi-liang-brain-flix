@@ -1,0 +1,118 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.upload {
+  text-align: left;
+  @include mobile {
+    &__heading {
+      color: $brainFlix-black;
+      font-size: $mobile-font-size-header;
+      margin: $mobile-padding-after-headlines 0 $mobile-padding-before-headlines
+        $mobile-padding-after-headlines;
+    }
+    &__divider-header {
+      width: 100%;
+      height: $divider-size;
+      background-color: $mercury;
+      margin: $mobile-padding-after-headlines 0 0 0;
+    }
+    &__video {
+      margin: $mobile-padding-after-headlines $mobile-padding-after-headlines
+        0.5rem $mobile-padding-after-headlines;
+      &--subheading {
+        color: $silver;
+        font-size: $mobile-font-size-body;
+        font-weight: $font-weight-demi;
+        margin: 1rem 0 0.3rem 0;
+      }
+      &--image {
+        width: 100%;
+        margin: 0.3rem 0;
+      }
+      &--title {
+        width: 100%;
+        height: 2rem;
+        border: $mercury solid $form-border;
+        border-radius: $form-radius;
+        background-color: $alabaster;
+        outline: none;
+        padding: 0.75rem;
+        &:focus {
+          border: $brainFlix-blue solid $form-border;
+        }
+        &::placeholder {
+          color: $brainFlix-black;
+        }
+      }
+      &--input {
+        resize: none;
+        width: 100%;
+        height: 6rem;
+        outline: none;
+        border: $mercury solid $form-border;
+        border-radius: $form-radius;
+        background-color: $alabaster;
+        outline: none;
+        padding: 0.75rem;
+        &:focus {
+          border: $brainFlix-blue solid $form-border;
+        }
+        &::placeholder {
+          color: $brainFlix-black;
+        }
+      }
+    }
+    &__button {
+      display: flex;
+      flex-direction: column;
+      margin: $mobile-padding-after-headlines;
+      &--publish {
+        @include mobile-button;
+        background-image: url(../../assets/Icons/upload.svg);
+      }
+      &--cancel {
+        @include mobile-button;
+        margin-top: $mobile-padding-after-headlines;
+        background-color: $white;
+        color: $brainFlix-blue;
+      }
+    }
+  }
+  @include tablet {
+    &__heading {
+      font-size: $desktop-font-size-header;
+      margin: $desktop-padding-after-headlines;
+    }
+    &__divider-header {
+      margin: 0;
+    }
+    &__video {
+      margin: $desktop-padding-after-headlines;
+      &--subheading {
+        font-size: $desktop-font-size-label;
+      }
+      &--image {
+        width: 50%;
+      }
+      &--divider {
+        width: 100%;
+        height: $divider-size;
+        background-color: $mercury;
+        margin: $mobile-padding-after-headlines 0 0 0;
+      }
+    }
+    &__button {
+        margin: $desktop-padding-after-headlines;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        &--publish {
+            width: 25%;
+        }
+        &--cancel {
+            width: 25%;
+            margin: 0;
+        }
+    }
+  }
+}

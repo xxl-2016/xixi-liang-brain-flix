@@ -2,96 +2,97 @@
 @use "../../styles/partials/mixins" as *;
 
 .header {
-    display: flex;
-    @include mobile {
-      flex-wrap: wrap;
-      justify-content: center;
+  text-align: center;
+  display: flex;
+  @include mobile {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    &__logo {
+      margin: $mobile-padding-after-headlines;
+      cursor: pointer;
+      &--image {
+        width: $logo-width;
+        height: $logo-height;
+      }
+    }
+    &__search {
+      display: flex;
       flex-direction: column;
-      &__logo {
-        margin: $mobile-padding-after-headlines;
-        cursor: pointer;
-        &--image {
-          width: $logo-width;
-          height: $logo-height;
+      margin: 0 $mobile-padding-after-headlines;
+      &--input {
+        background-image: url(../../assets/Icons/search.svg);
+        background-repeat: no-repeat;
+        background-position: 0.5rem;
+        width: 80%;
+        height: 2rem;
+        border: $mercury solid $form-border;
+        border-radius: $form-radius;
+        padding-left: 2rem;
+        &::placeholder {
+          color: $brainFlix-darkblack;
         }
       }
-      &__search {
-        display: flex;
-        flex-direction: column;
-        margin: 0 $mobile-padding-after-headlines;
-        &--input {
-          background-image: url(../../assets/Icons/search.svg);
-          background-repeat: no-repeat;
-          background-position: 0.5rem;
-          width: 80%;
-          height: 2rem;
-          border: $mercury solid $form-border;
-          border-radius: $form-radius;
-          padding-left: 2rem;
-          &::placeholder {
-            color: $brainFlix-darkblack;
-          }
-        }
-        &--button {
-          @include mobile-button;
-          background-image: url(../../assets/Icons/upload.svg);
-          margin-top: $mobile-padding-after-headlines;
-        }
-      }
-      &__avatar {
-        @include avatar;
-        background-image: url(../../assets/Images/Mohan-muruge.jpg);
-        background-size: cover;
-        position: absolute;
-        right: 1rem;
-        top: 3.6rem;
+      &--button {
+        @include mobile-button;
+        background-image: url(../../assets/Icons/upload.svg);
+        margin-top: $mobile-padding-after-headlines;
       }
     }
-    @include tablet {
-      flex-wrap: nowrap;
-      flex-direction: row;
-      justify-content: flex-start;
-      &__logo {
-        margin: $desktop-padding-after-headlines;
-      }
-      &__search {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin-top: 1.2rem;
-        &--input {
-          height: $button-height;
-          width: 15rem;
-          margin-left: $desktop-padding-before-headlines;
-        }
-        &--button {
-          margin: 0;
-          width: 12rem;
-          margin-left: $desktop-padding-before-headlines;
-        }
-      }
-      &__avatar {
-        right: $desktop-padding-after-headlines;
-        top: 1.3rem;
-      }
-    }
-    @include desktop {
-      &__logo {
-        margin-left: 6rem;
-        z-index: 10;
-      }
-      &__search {
-        justify-content: flex-end;
-        position: relative;
-        right: 12%;
-        &--input {
-          width: 18rem;
-        }
-      }
-      &__avatar {
-        right: 6rem;
-      }
+    &__avatar {
+      @include avatar;
+      background-image: url(../../assets/Images/Mohan-muruge.jpg);
+      background-size: cover;
+      position: absolute;
+      right: 1rem;
+      top: 3.6rem;
     }
   }
+  @include tablet {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    &__logo {
+      margin: $desktop-padding-after-headlines;
+    }
+    &__search {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-top: 1.2rem;
+      &--input {
+        height: $button-height;
+        width: 15rem;
+        margin-left: $desktop-padding-before-headlines;
+      }
+      &--button {
+        margin: 0;
+        width: 12rem;
+        margin-left: $desktop-padding-before-headlines;
+      }
+    }
+    &__avatar {
+      right: $desktop-padding-after-headlines;
+      top: 1.3rem;
+    }
+  }
+  @include desktop {
+    &__logo {
+      margin-left: 6rem;
+      z-index: 10;
+    }
+    &__search {
+      justify-content: flex-end;
+      position: relative;
+      right: 12%;
+      &--input {
+        width: 18rem;
+      }
+    }
+    &__avatar {
+      right: 6rem;
+    }
+  }
+}

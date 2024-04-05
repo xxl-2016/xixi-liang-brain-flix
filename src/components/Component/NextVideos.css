@@ -23,6 +23,9 @@
   padding: 0;
 }
 
+.next {
+  text-align: center;
+}
 @media screen and (min-width: 320px) {
   .next__heading {
     text-align: left;

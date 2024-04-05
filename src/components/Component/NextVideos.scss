@@ -2,6 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .next {
+  text-align: center;
   @include mobile {
     &__heading {
       text-align: left;
