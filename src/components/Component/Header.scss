@@ -62,6 +62,9 @@
       flex-direction: row;
       justify-content: flex-start;
       margin-top: 1.2rem;
+      justify-content: flex-end;
+      position: relative;
+      right: 8%;
       &--input {
         height: $button-height;
         width: 15rem;
@@ -84,8 +87,6 @@
       z-index: 10;
     }
     &__search {
-      justify-content: flex-end;
-      position: relative;
       right: 12%;
       &--input {
         width: 18rem;

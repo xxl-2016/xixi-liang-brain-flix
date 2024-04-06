@@ -25,40 +25,44 @@
         font-weight: $font-weight-demi;
         margin: 1rem 0 0.3rem 0;
       }
-      &--image {
-        width: 100%;
-        margin: 0.3rem 0;
-      }
-      &--title {
-        width: 100%;
-        height: 2rem;
-        border: $mercury solid $form-border;
-        border-radius: $form-radius;
-        background-color: $alabaster;
-        outline: none;
-        padding: 0.75rem;
-        &:focus {
-          border: $brainFlix-blue solid $form-border;
-        }
-        &::placeholder {
-          color: $brainFlix-black;
+      &--current {
+        &-image {
+          width: 100%;
+          margin: 0.3rem 0;
         }
       }
-      &--input {
-        resize: none;
-        width: 100%;
-        height: 6rem;
-        outline: none;
-        border: $mercury solid $form-border;
-        border-radius: $form-radius;
-        background-color: $alabaster;
-        outline: none;
-        padding: 0.75rem;
-        &:focus {
-          border: $brainFlix-blue solid $form-border;
+      &--form {
+        &-title {
+          width: 100%;
+          height: 2rem;
+          border: $mercury solid $form-border;
+          border-radius: $form-radius;
+          background-color: $alabaster;
+          outline: none;
+          padding: 0.75rem;
+          &:focus {
+            border: $brainFlix-blue solid $form-border;
+          }
+          &::placeholder {
+            color: $brainFlix-black;
+          }
         }
-        &::placeholder {
-          color: $brainFlix-black;
+        &-input {
+          resize: none;
+          width: 100%;
+          height: 6rem;
+          outline: none;
+          border: $mercury solid $form-border;
+          border-radius: $form-radius;
+          background-color: $alabaster;
+          outline: none;
+          padding: 0.75rem;
+          &:focus {
+            border: $brainFlix-blue solid $form-border;
+          }
+          &::placeholder {
+            color: $brainFlix-black;
+          }
         }
       }
     }
@@ -91,28 +95,66 @@
       &--subheading {
         font-size: $desktop-font-size-label;
       }
-      &--image {
-        width: 50%;
+      &--current {
+        &-image {
+          width: 50%;
+        }
       }
       &--divider {
         width: 100%;
         height: $divider-size;
         background-color: $mercury;
-        margin: $mobile-padding-after-headlines 0 0 0;
+        margin: $mobile-padding-after-headlines 0;
       }
     }
     &__button {
-        margin: $desktop-padding-after-headlines;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-start;
-        &--publish {
-            width: 25%;
+      margin: $desktop-padding-after-headlines;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      &--publish {
+        width: 25%;
+      }
+      &--cancel {
+        width: 25%;
+        margin: 0;
+      }
+    }
+  }
+  @include desktop {
+    &__heading {
+      font-size: $desktop-font-size-header;
+      margin: $desktop-padding-before-headlines 0 0 6rem;
+    }
+    &__video {
+      margin: $desktop-padding-after-headlines 6rem 0 6rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      &--current {
+        width: 40%;
+        &-image {
+          width: 100%;
+          margin: 0;
         }
-        &--cancel {
-            width: 25%;
-            margin: 0;
+      }
+      &--form {
+        width: 60%;
+        padding-left: 2rem;
+        &-title {
+          width: 100%;
         }
+        &-input {
+          width: 100%;
+          min-height: 10.2rem;
+        }
+      }
+    }
+    &__button {
+      margin: $desktop-padding-after-headlines 6rem 0 6rem;
+      &--publish {
+        width: 20%;
+      }
     }
   }
 }

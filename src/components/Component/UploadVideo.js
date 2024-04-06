@@ -8,27 +8,31 @@ function UploadVideoPage() {
       <h2 className="upload__heading">Upload Video</h2>
       <div className="upload__video">
         <div className="upload__video--divider"></div>
-        <h3 className="upload__video--subheading">VIDEO THUMBNAIL</h3>
-        <img
-          className="upload__video--image"
-          src={uploadImage}
-          alt="upload image"
-        />
-        <h3 className="upload__video--subheading">TITLE YOUR VIDEO</h3>
-        <input
-          className="upload__video--title"
-          type="text"
-          placeholder="Add a title to your video"
-        />
-        <h3 className="upload__video--subheading">ADD A VIDEO DESCRIPTION</h3>
-        <textarea
-          className="upload__video--input"
-          name="upload-input-description"
-          id="upload-text-area"
-          cols="30"
-          rows="10"
-          placeholder="Add a description to your video"
-        ></textarea>
+        <div className="upload__video--current">
+          <h3 className="upload__video--subheading">VIDEO THUMBNAIL</h3>
+          <img
+            className="upload__video--current-image"
+            src={uploadImage}
+            alt="upload image"
+          />
+        </div>
+        <div className="upload__video--form">
+          <h3 className="upload__video--subheading">TITLE YOUR VIDEO</h3>
+          <input
+            className="upload__video--form-title"
+            type="text"
+            placeholder="Add a title to your video"
+          />
+          <h3 className="upload__video--subheading">ADD A VIDEO DESCRIPTION</h3>
+          <textarea
+            className="upload__video--form-input"
+            name="upload-input-description"
+            id="upload-text-area"
+            cols="30"
+            rows="10"
+            placeholder="Add a description to your video"
+          ></textarea>
+        </div>
         <div className="upload__video--divider"></div>
       </div>
       <div className="upload__button">
