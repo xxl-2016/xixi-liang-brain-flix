@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./VideoComments.css";
 import views from "../../assets/Icons/views.svg";
 import likes from "../../assets/Icons/likes.svg";
+import { BrainFlixApi } from "../../api/BrainFlixApi";
+
+// Store API key
+const api = new BrainFlixApi("c31ccc68-d2c8-4700-808f-71f5037605c2");
 
 // Date Format Function
 function formattedDate(timeStamp) {

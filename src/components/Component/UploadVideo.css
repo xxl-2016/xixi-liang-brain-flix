@@ -61,7 +61,7 @@
     padding: 0.75rem;
   }
   .upload__video--form-title:focus {
-    border: #0095FF solid 1px;
+    border: #0095FF solid 2px;
   }
   .upload__video--form-title::-moz-placeholder {
     color: #323232;
@@ -81,7 +81,7 @@
     padding: 0.75rem;
   }
   .upload__video--form-input:focus {
-    border: #0095FF solid 1px;
+    border: #0095FF solid 2px;
   }
   .upload__video--form-input::-moz-placeholder {
     color: #323232;
@@ -113,6 +113,9 @@
     cursor: pointer;
   }
   .upload__button--cancel {
+    margin-top: 16px;
+  }
+  .upload__button--cancel-button {
     width: 100%;
     height: 40px;
     background-color: #0095FF;
@@ -124,12 +127,16 @@
     color: #FFFFFF;
     font-size: 13px;
     font-weight: 600;
-    margin-top: 16px;
+    text-decoration: none;
     background-color: #FFFFFF;
     color: #0095FF;
   }
-  .upload__button--cancel:hover {
+  .upload__button--cancel-button:hover {
     background-color: #0065AD;
+    cursor: pointer;
+  }
+  .upload__button--cancel-button:hover {
+    background-color: #FFFFFF;
     cursor: pointer;
   }
 }

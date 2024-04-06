@@ -104,7 +104,7 @@
             background-color: $alabaster;
             outline: none;
             &:focus {
-              border: $brainFlix-blue solid $form-border;
+              border: $brainFlix-blue solid $form-focus-border;
             }
             &::placeholder {
               color: $brainFlix-black;

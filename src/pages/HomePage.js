@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import VideoComments from "../components/Component/VideoComments";
 import CurrentVideo from "../components/Component/CurrentVideo";
 import NextVideos from "../components/Component/NextVideos";
@@ -33,31 +33,18 @@ function HomePage() {
       );
     };
     fetchVideos();
+    window.scrollTo(0, 0);
   }, [videoId]);
 
   if (!currentVideo || !currentVideoDetail || nextVideos.length === 0) {
     return <>Loading...</>;
   }
-
-  const handleVideoSelect = async (selectedVideo) => {
-    try {
-      const selectVideo = await api.getVideo(selectedVideo);
-      const fetchedVideos = await api.getVideos();
-      setCurrentVideo(selectVideo);
-      setNextVideos(
-        fetchedVideos.filter((video) => video.id != selectVideo.id)
-      );
-      window.scrollTo(0, 0);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   return (
     <>
       <CurrentVideo currentVideo={currentVideo} />
       <div className="content">
         <VideoComments currentVideo={currentVideoDetail} />
-        <NextVideos nextVideos={nextVideos} selectVideo={handleVideoSelect} />
+        <NextVideos nextVideos={nextVideos} />
       </div>
     </>
   );

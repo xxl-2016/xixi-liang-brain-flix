@@ -41,7 +41,7 @@
           outline: none;
           padding: 0.75rem;
           &:focus {
-            border: $brainFlix-blue solid $form-border;
+            border: $brainFlix-blue solid $form-focus-border;
           }
           &::placeholder {
             color: $brainFlix-black;
@@ -58,7 +58,7 @@
           outline: none;
           padding: 0.75rem;
           &:focus {
-            border: $brainFlix-blue solid $form-border;
+            border: $brainFlix-blue solid $form-focus-border;
           }
           &::placeholder {
             color: $brainFlix-black;
@@ -75,10 +75,17 @@
         background-image: url(../../assets/Icons/upload.svg);
       }
       &--cancel {
-        @include mobile-button;
         margin-top: $mobile-padding-after-headlines;
-        background-color: $white;
-        color: $brainFlix-blue;
+        &-button {
+          @include mobile-button;
+          text-decoration: none;
+          background-color: $white;
+          color: $brainFlix-blue;
+          &:hover {
+            background-color: $white;
+            cursor: pointer;
+          }
+        }
       }
     }
   }

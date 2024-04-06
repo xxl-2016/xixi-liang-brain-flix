@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./NextVideos.css";
 
 function NextVideos({ nextVideos, selectVideo }) {
@@ -11,11 +12,7 @@ function NextVideos({ nextVideos, selectVideo }) {
         </div>
         <div className="next__videos">
           {nextVideos.map((video) => (
-            <div
-              key={video.id}
-              className="next__videos--video"
-              onClick={() => selectVideo(video.id)}
-            >
+            <Link key={video.id} to={`/videos/${video.id}`} className="next__videos--video">
               <img
                 className="next__videos--video-image"
                 src={video.image}
@@ -29,7 +26,7 @@ function NextVideos({ nextVideos, selectVideo }) {
                   {video.channel}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
