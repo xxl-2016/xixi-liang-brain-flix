@@ -2,310 +2,341 @@
 @use "../../styles/partials/mixins" as *;
 
 .comment {
-    text-align: left;
-    color: $brainFlix-black;
-    &__divider {
-      height: $divider-size;
-      background-color: $mercury;
-      margin: $mobile-padding-after-headlines;
+  text-align: left;
+  color: $brainFlix-black;
+  &__divider {
+    height: $divider-size;
+    background-color: $mercury;
+    margin: $mobile-padding-after-headlines;
+  }
+  &__heading {
+    &--text {
+      color: $brainFlix-black;
+      text-align: left;
     }
+  }
+  @include mobile {
     &__heading {
       &--text {
-        color: $brainFlix-black;
-        text-align: left;
+        font-size: $mobile-font-size-header;
+        margin: $mobile-padding-after-headlines;
       }
     }
-    @include mobile {
-      &__heading {
-        &--text {
-          font-size: $mobile-font-size-header;
-          margin: $mobile-padding-after-headlines;
+    &__detail {
+      display: flex;
+      justify-content: flex-start;
+      margin: $mobile-padding-after-headlines;
+      &--author {
+        width: 50%;
+        text-align: left;
+        &-name {
+          font-size: $mobile-font-size-subheader;
+          font-weight: $font-weight-demi;
+        }
+        &-time {
+          color: $silver;
+          font-weight: $font-weight-regular;
+          font-size: $mobile-font-size-body;
+          margin-top: $mobile-padding-after-headlines;
         }
       }
-      &__detail {
-        display: flex;
-        justify-content: flex-start;
-        margin: $mobile-padding-after-headlines;
-        &--author {
-          width: 50%;
-          text-align: left;
-          &-name {
-            font-size: $mobile-font-size-subheader;
-            font-weight: $font-weight-demi;
-          }
-          &-time {
+      &--watch {
+        width: 50%;
+        &-view {
+          display: flex;
+          &-amount {
             color: $silver;
             font-weight: $font-weight-regular;
             font-size: $mobile-font-size-body;
-            margin-top: $mobile-padding-after-headlines;
+            margin-left: $mobile-padding-between-components;
           }
         }
-        &--watch {
-          width: 50%;
-          &-view {
-            display: flex;
-            &-amount {
-              color: $silver;
-              font-weight: $font-weight-regular;
-              font-size: $mobile-font-size-body;
-              margin-left: $mobile-padding-between-components;
-            }
-          }
-          &-like {
-            display: flex;
-            margin-top: $mobile-padding-after-headlines;
-            &-amount {
-              color: $silver;
-              font-weight: $font-weight-regular;
-              font-size: $mobile-font-size-body;
-              margin-left: $mobile-padding-between-components;
-            }
+        &-like {
+          display: flex;
+          margin-top: $mobile-padding-after-headlines;
+          &-amount {
+            color: $silver;
+            font-weight: $font-weight-regular;
+            font-size: $mobile-font-size-body;
+            margin-left: $mobile-padding-between-components;
           }
         }
       }
-      &__description {
-        margin: $mobile-padding-after-headlines;
-        &--text {
-          font-size: $mobile-font-size-body;
-        }
-        &--amount {
-          margin-top: $mobile-padding-after-headlines;
+    }
+    &__description {
+      margin: $mobile-padding-after-headlines;
+      &--text {
+        font-size: $mobile-font-size-body;
+      }
+      &--amount {
+        margin-top: $mobile-padding-after-headlines;
+        font-size: $mobile-font-size-body;
+        font-weight: $font-weight-demi;
+      }
+    }
+    &__form {
+      margin: $mobile-padding-after-headlines;
+      &--avatar {
+        @include avatar;
+        background-image: url(../../assets/Images/Mohan-muruge.jpg);
+        background-size: cover;
+        position: absolute;
+        margin-top: 1.4rem;
+      }
+      &--input {
+        &-label {
+          position: relative;
+          left: 20%;
+          color: $silver;
           font-size: $mobile-font-size-body;
           font-weight: $font-weight-demi;
         }
-      }
-      &__form {
-        margin: $mobile-padding-after-headlines;
-        &--avatar {
-          @include avatar;
-          background-image: url(../../assets/Images/Mohan-muruge.jpg);
-          background-size: cover;
-          position: absolute;
-          margin-top: 1rem;
-        }
-        &--input {
-          &-label {
-            position: relative;
-            left: 20%;
-            color: $silver;
-            font-size: $mobile-font-size-body;
-            font-weight: $font-weight-demi;
-          }
-          &-add {
-            resize: none;
-            width: 80%;
-            position: relative;
-            left: 20%;
-            height: 6rem;
-            margin-top: 0.5rem;
-            outline: none;
-            border: $mercury solid $form-border;
-            border-radius: $form-radius;
-            background-color: $alabaster;
-            outline: none;
-            &:focus {
-              border: $brainFlix-blue solid $form-focus-border;
-            }
-            &::placeholder {
-              color: $brainFlix-black;
-            }
-            padding: 0.75rem 0 0 0.75rem;
-          }
-        }
-        &--button {
-          &-comment {
-            @include mobile-button;
-            width: 80%;
-            position: relative;
-            left: 20%;
-            background-image: url(../../assets/Icons/add_comment.svg);
-            margin-top: $mobile-padding-after-headlines;
-          }
-        }
-      }
-      &__card {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: $mobile-padding-after-headlines;
-        &--avatar {
-          @include avatar;
-          background-size: cover;
-        }
-        &--info {
-          display: flex;
-          justify-content: space-between;
+        &-name {
+          resize: none;
           width: 80%;
-          height: fit-content;
-          &-name {
-            font-size: $mobile-font-size-body;
-            font-weight: $font-weight-demi;
-          }
-          &-time {
-            font-size: $mobile-font-size-body;
-            font-weight: $font-weight-regular;
-            color: $silver;
-          }
-        }
-        &--text {
-          &-detail {
-            width: 80%;
-            position: relative;
-            left: 20%;
-            font-size: $mobile-font-size-body;
-            font-weight: $font-weight-regular;
-          }
-        }
-        &--divider {
-          width: 100%;
-          height: $divider-size;
-          background-color: $mercury;
-          margin: $mobile-padding-after-headlines 0 0 0;
-        }
-      }
-    }
-    @include tablet {
-      &__divider-first {
-        display: none;
-      }
-      &__divider {
-        margin: $desktop-padding-after-headlines;
-      }
-      &__heading {
-        &--text {
-          margin: $desktop-padding-after-headlines;
-          font-size: $desktop-font-size-header;
-        }
-      }
-      &__detail {
-        display: flex;
-        margin: $desktop-padding-after-headlines;
-        &--author {
-          display: flex;
-          width: 50%;
-          justify-content: flex-start;
-          &-name {
-            font-size: $desktop-font-size-body;
-          }
-          &-time {
-            font-size: $desktop-font-size-body;
-            margin: 0;
-            margin-left: $desktop-padding-between-components;
-          }
-        }
-        &--watch {
-          display: flex;
-          width: 50%;
-          justify-content: flex-end;
-          &-view {
-            &-amount {
-              font-size: $desktop-font-size-body;
-            }
-          }
-          &-like {
-            margin: 0;
-            margin-left: $desktop-padding-between-components;
-            &-amount {
-              font-size: $desktop-font-size-body;
-            }
-          }
-        }
-      }
-      &__description {
-        margin: $desktop-padding-after-headlines;
-        &--text {
-          font-size: $desktop-font-size-body;
-          line-height: 1.2rem;
-        }
-        &--amount {
-          font-size: $desktop-font-size-body;
-          font-weight: $font-weight-bold;
-        }
-      }
-      &__form {
-        margin: $desktop-padding-after-headlines;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
-        &--avatar {
           position: relative;
-        }
-        &--input {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          width: 70%;
-          &-label {
-            left: 5%;
+          left: 20%;
+          height: 2rem;
+          margin-top: 0.5rem;
+          outline: none;
+          border: $mercury solid $form-border;
+          border-radius: $form-radius;
+          background-color: $alabaster;
+          outline: none;
+          &:focus {
+            border: $brainFlix-blue solid $form-focus-border;
           }
-          &-add {
-            width: 100%;
-            height: $button-height;
-            font-size: $desktop-font-size-label;
-            left: 5%;
+          &::placeholder {
+            color: $brainFlix-black;
+          }
+          padding-left: 0.75rem;
+          &-error {
+            border: red solid $form-border;
           }
         }
-        &--button {
-          width: 30%;
-          margin: 0;
+        &-add {
+          resize: none;
+          width: 80%;
+          position: relative;
+          left: 20%;
+          height: 6rem;
+          margin-top: 0.5rem;
+          outline: none;
+          border: $mercury solid $form-border;
+          border-radius: $form-radius;
+          background-color: $alabaster;
+          outline: none;
+          &:focus {
+            border: $brainFlix-blue solid $form-focus-border;
+          }
+          &::placeholder {
+            color: $brainFlix-black;
+          }
+          padding: 0.75rem 0 0 0.75rem;
+          &-error {
+            border: red solid $form-border;
+          }
         }
       }
-      &__card {
-        margin: $desktop-padding-after-headlines;
-        &--info {
-          width: 93%;
-        }
-        &--text {
-          &-detail {
-            width: 93%;
-            font-size: $desktop-font-size-body;
-            left: 7%;
-          }
+      &--button {
+        &-comment {
+          @include mobile-button;
+          width: 80%;
+          position: relative;
+          left: 20%;
+          background-image: url(../../assets/Icons/add_comment.svg);
+          margin-top: $mobile-padding-after-headlines;
         }
       }
     }
-    @include desktop {
-      margin-bottom: 6rem;
-      &__heading {
-        &--text {
-          margin: $desktop-padding-before-headlines 0 1rem 6rem;
+    &__card {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: $mobile-padding-after-headlines;
+      &--avatar {
+        @include avatar;
+        background-size: cover;
+      }
+      &--info {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        height: fit-content;
+        &-name {
+          font-size: $mobile-font-size-body;
+          font-weight: $font-weight-demi;
+        }
+        &-time {
+          font-size: $mobile-font-size-body;
+          font-weight: $font-weight-regular;
+          color: $silver;
         }
       }
-      &__divider {
-        margin: $desktop-padding-after-headlines 0 0 6rem;
-      }
-      &__detail {
-        margin: $desktop-padding-after-headlines 2rem 0 6rem;
-      }
-      &__description {
-        margin: $desktop-padding-after-headlines 2rem 0 6rem;
-        &--amount {
-          margin-top: 2rem;
+      &--text {
+        width: 100%;
+        &-detail {
+          width: 80%;
+          position: relative;
+          left: 20%;
+          font-size: $mobile-font-size-body;
+          font-weight: $font-weight-regular;
         }
       }
-      &__form {
-        margin: $desktop-padding-after-headlines 2rem 0 6rem;
+      &--divider {
+        width: 100%;
+        height: $divider-size;
+        background-color: $mercury;
+        margin: $mobile-padding-after-headlines 0 0 0;
       }
-      &__card {
-        margin: $desktop-padding-after-headlines 0 0 6rem;
+    }
+  }
+  @include tablet {
+    &__divider-first {
+      display: none;
+    }
+    &__divider {
+      margin: $desktop-padding-after-headlines;
+    }
+    &__heading {
+      &--text {
+        margin: $desktop-padding-after-headlines;
+        font-size: $desktop-font-size-header;
+      }
+    }
+    &__detail {
+      display: flex;
+      margin: $desktop-padding-after-headlines;
+      &--author {
+        display: flex;
+        width: 50%;
         justify-content: flex-start;
-        &--info {
-          width: 88%;
+        &-name {
+          font-size: $desktop-font-size-body;
+        }
+        &-time {
+          font-size: $desktop-font-size-body;
+          margin: 0;
           margin-left: $desktop-padding-between-components;
         }
-        &--text {
-          &-detail {
-            width: 88%;
-            margin-left: $desktop-padding-between-components;
-            left: 5%;
+      }
+      &--watch {
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        &-view {
+          &-amount {
+            font-size: $desktop-font-size-body;
           }
         }
-        &--divider {
-          margin-top: 2rem;
+        &-like {
+          margin: 0;
+          margin-left: $desktop-padding-between-components;
+          &-amount {
+            font-size: $desktop-font-size-body;
+          }
+        }
+      }
+    }
+    &__description {
+      margin: $desktop-padding-after-headlines;
+      &--text {
+        font-size: $desktop-font-size-body;
+        line-height: 1.2rem;
+      }
+      &--amount {
+        font-size: $desktop-font-size-body;
+        font-weight: $font-weight-bold;
+      }
+    }
+    &__form {
+      margin: $desktop-padding-after-headlines;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      &--avatar {
+        position: relative;
+      }
+      &--input {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 70%;
+        &-label {
+          left: 5%;
+        }
+        &-name {
+          width: 50%;
+          height: 2rem;
+          font-size: $desktop-font-size-label;
+          left: 5%;
+        }
+        &-add {
+          width: 100%;
+          height: $button-height;
+          font-size: $desktop-font-size-label;
+          left: 5%;
+        }
+      }
+      &--button {
+        width: 30%;
+        margin: 0;
+      }
+    }
+    &__card {
+      margin: $desktop-padding-after-headlines;
+      &--info {
+        width: 93%;
+      }
+      &--text {
+        &-detail {
+          width: 93%;
+          font-size: $desktop-font-size-body;
+          left: 7%;
         }
       }
     }
   }
-
-  
+  @include desktop {
+    margin-bottom: 6rem;
+    &__heading {
+      &--text {
+        margin: $desktop-padding-before-headlines 0 1rem 6rem;
+      }
+    }
+    &__divider {
+      margin: $desktop-padding-after-headlines 0 0 6rem;
+    }
+    &__detail {
+      margin: $desktop-padding-after-headlines 2rem 0 6rem;
+    }
+    &__description {
+      margin: $desktop-padding-after-headlines 2rem 0 6rem;
+      &--amount {
+        margin-top: 2rem;
+      }
+    }
+    &__form {
+      margin: $desktop-padding-after-headlines 2rem 0 6rem;
+    }
+    &__card {
+      margin: $desktop-padding-after-headlines 0 0 6rem;
+      justify-content: flex-start;
+      &--info {
+        width: 87%;
+        margin-left: $desktop-padding-between-components;
+      }
+      &--text {
+        &-detail {
+          width: 87%;
+          margin-left: $desktop-padding-between-components;
+          left: 5%;
+        }
+      }
+      &--divider {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

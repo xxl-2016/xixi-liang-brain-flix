@@ -104,7 +104,7 @@
     background-image: url(../../assets/Images/Mohan-muruge.jpg);
     background-size: cover;
     position: absolute;
-    margin-top: 1rem;
+    margin-top: 1.4rem;
   }
   .comment__form--input-label {
     position: relative;
@@ -112,6 +112,32 @@
     color: #AFAFAF;
     font-size: 13px;
     font-weight: 600;
+  }
+  .comment__form--input-name {
+    resize: none;
+    width: 80%;
+    position: relative;
+    left: 20%;
+    height: 2rem;
+    margin-top: 0.5rem;
+    outline: none;
+    border: #E1E1E1 solid 1px;
+    border-radius: 4px;
+    background-color: #FAFAFA;
+    outline: none;
+    padding-left: 0.75rem;
+  }
+  .comment__form--input-name:focus {
+    border: #0095FF solid 2px;
+  }
+  .comment__form--input-name::-moz-placeholder {
+    color: #323232;
+  }
+  .comment__form--input-name::placeholder {
+    color: #323232;
+  }
+  .comment__form--input-name-error {
+    border: red solid 1px;
   }
   .comment__form--input-add {
     resize: none;
@@ -135,6 +161,9 @@
   }
   .comment__form--input-add::placeholder {
     color: #323232;
+  }
+  .comment__form--input-add-error {
+    border: red solid 1px;
   }
   .comment__form--button-comment {
     width: 100%;
@@ -186,6 +215,9 @@
     font-size: 13px;
     font-weight: 400;
     color: #AFAFAF;
+  }
+  .comment__card--text {
+    width: 100%;
   }
   .comment__card--text-detail {
     width: 80%;
@@ -274,6 +306,12 @@
   .comment__form--input-label {
     left: 5%;
   }
+  .comment__form--input-name {
+    width: 50%;
+    height: 2rem;
+    font-size: 12px;
+    left: 5%;
+  }
   .comment__form--input-add {
     width: 100%;
     height: 40px;
@@ -323,11 +361,11 @@
     justify-content: flex-start;
   }
   .comment__card--info {
-    width: 88%;
+    width: 87%;
     margin-left: 24px;
   }
   .comment__card--text-detail {
-    width: 88%;
+    width: 87%;
     margin-left: 24px;
     left: 5%;
   }

@@ -6,17 +6,33 @@ import "./UploadVideo.css";
 function UploadVideoPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [isTitleValid, setIsTitleValid] = useState(true);
+  const [isDescriptionValid, setIsDescriptionValid] = useState(true);
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
+  const handleChangeTitle = (event) => {
+    setTitle(event.target.value);
+    if (!isTitleValid) setIsTitleValid(true);
+  };
+
+  const handleChangeDescription = (event) => {
+    setDescription(event.target.value);
+    if (!isDescriptionValid) setDescription(true);
+  };
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    try {
-      alert(
-        `Uploading video with title: ${title} and description: ${description}`
-      );
-    } catch (error) {
-      console.error("Failed to upload video:", error);
-      alert("Failed to upload video.");
+    if (!title.trim()) {
+      setIsTitleValid(false);
+      alert("Please enter a title.");
+      return;
+    } else if (!description.trim()) {
+      setIsDescriptionValid(false);
+      alert("Please enter a description.");
+      return;
+    } else {
+      alert("Video uploaded successfully.");
+      navigate("/");
     }
   };
 
@@ -38,24 +54,28 @@ function UploadVideoPage() {
           <div className="upload__video--form">
             <h3 className="upload__video--subheading">TITLE YOUR VIDEO</h3>
             <input
-              className="upload__video--form-title"
+              className={`upload__video--form-title ${
+                !isTitleValid ? "upload__video--form-title-error" : ""
+              }`}
               type="text"
               placeholder="Add a title to your video"
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={handleChangeTitle}
             />
             <h3 className="upload__video--subheading">
               ADD A VIDEO DESCRIPTION
             </h3>
             <textarea
-              className="upload__video--form-input"
+              className={`upload__video--form-input ${
+                !isDescriptionValid ? "upload__video--form-input-error" : ""
+              }`}
               name="upload-input-description"
               id="upload-text-area"
               cols="30"
               rows="10"
               placeholder="Add a description to your video"
               value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={handleChangeDescription}
             ></textarea>
           </div>
           <div className="upload__video--divider"></div>

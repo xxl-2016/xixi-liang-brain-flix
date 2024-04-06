@@ -202,9 +202,15 @@
   .upload__video--form-title {
     width: 100%;
   }
+  .upload__video--form-title-error {
+    border: red solid 1px;
+  }
   .upload__video--form-input {
     width: 100%;
     min-height: 10.2rem;
+  }
+  .upload__video--form-input-error {
+    border: red solid 1px;
   }
   .upload__button {
     margin: 24px 6rem 0 6rem;

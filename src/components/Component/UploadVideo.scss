@@ -150,10 +150,16 @@
         padding-left: 2rem;
         &-title {
           width: 100%;
+          &-error {
+            border: red solid $form-border;
+          }
         }
         &-input {
           width: 100%;
           min-height: 10.2rem;
+          &-error {
+            border: red solid $form-border;
+          }
         }
       }
     }

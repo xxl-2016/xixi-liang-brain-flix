@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./VideoComments.css";
 import views from "../../assets/Icons/views.svg";
 import likes from "../../assets/Icons/likes.svg";
@@ -13,6 +13,52 @@ function formattedDate(timeStamp) {
 }
 
 function VideoComments({ currentVideo }) {
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
+  const [isNameValid, setIsNameValid] = useState(true);
+  const [isCommentValid, setIsCommentValid] = useState(true);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!name.trim()) {
+      setIsNameValid(false);
+      alert("Please enter a name.");
+      return;
+    } else if (!comment.trim()) {
+      setIsCommentValid(false);
+      alert("Please enter a comment.");
+      return;
+    } else {
+      try {
+        const newComment = {
+          name: name,
+          comment: comment,
+        };
+        const newPostComment = await api.postComment(
+          currentVideo.id,
+          newComment
+        );
+        const newComments = newPostComment.data;
+        setComment("");
+        setName("");
+        setIsNameValid(true);
+        setIsCommentValid(true);
+      } catch (error) {
+        console.log("Failed to post comment: ", error);
+      }
+    }
+  };
+
+  const handleCommentChange = (event) => {
+    setComment(event.target.value);
+    if (!isCommentValid) setIsCommentValid(true);
+  };
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+    if (!isNameValid) setIsNameValid(true);
+  };
+
   return (
     <>
       {/* Comment Section */}
@@ -62,25 +108,38 @@ function VideoComments({ currentVideo }) {
             {currentVideo.comments.length} Comments
           </p>
         </div>
-        <div className="comment__form">
+        <form className="comment__form" onSubmit={handleSubmit}>
           <div className="comment__form--avatar"></div>
           <div className="comment__form--input">
             <label className="comment__form--input-label" htmlFor="join">
               JOIN THE CONVERSATION
             </label>
+            <input
+              type="text"
+              className={`comment__form--input-name ${
+                isNameValid ? "" : "comment__form--input-name-error"
+              }`}
+              placeholder="Add a name"
+              onChange={handleNameChange}
+            />
             <textarea
-              className="comment__form--input-add"
+              className={`comment__form--input-add ${
+                isCommentValid ? "" : "comment__form--input-add-error"
+              }`}
               name="comment"
               id="form-text-area"
               cols="30"
               rows="10"
               placeholder="Add a new comment"
+              onChange={handleCommentChange}
             ></textarea>
           </div>
           <div className="comment__form--button">
-            <button className="comment__form--button-comment">COMMENT</button>
+            <button type="submit" className="comment__form--button-comment">
+              COMMENT
+            </button>
           </div>
-        </div>
+        </form>
         <div className="comment__divider"></div>
         {currentVideo.comments.map((comment) => (
           <div key={comment.id} className="comment__card">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import VideoComments from "../components/Component/VideoComments";
 import CurrentVideo from "../components/Component/CurrentVideo";
 import NextVideos from "../components/Component/NextVideos";
