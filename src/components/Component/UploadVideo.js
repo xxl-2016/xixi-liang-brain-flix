@@ -48,7 +48,7 @@ function UploadVideoPage() {
             <img
               className="upload__video--current-image"
               src={uploadImage}
-              alt="upload image"
+              alt="upload"
             />
           </div>
           <div className="upload__video--form">

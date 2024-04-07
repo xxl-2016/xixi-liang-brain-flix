@@ -13,6 +13,7 @@ function HomePage() {
   const [currentVideo, setCurrentVideo] = useState(null);
   const [currentVideoDetail, setCurrentVideoDetail] = useState(null);
   const [nextVideos, setNextVideos] = useState([]);
+  const [refreshCounter, setRefreshCounter] = useState(0);
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -34,16 +35,24 @@ function HomePage() {
     };
     fetchVideos();
     window.scrollTo(0, 0);
-  }, [videoId]);
+  }, [videoId, refreshCounter]);
 
   if (!currentVideo || !currentVideoDetail || nextVideos.length === 0) {
     return <>Loading...</>;
   }
+
+  const handleNewComment = async () => {
+    setRefreshCounter((prev) => prev + 1);
+  };
+
   return (
     <>
       <CurrentVideo currentVideo={currentVideo} />
       <div className="content">
-        <VideoComments currentVideo={currentVideoDetail} />
+        <VideoComments
+          currentVideo={currentVideoDetail}
+          onNewComment={handleNewComment}
+        />
         <NextVideos nextVideos={nextVideos} />
       </div>
     </>

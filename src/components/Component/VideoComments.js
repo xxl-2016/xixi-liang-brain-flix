@@ -12,7 +12,7 @@ function formattedDate(timeStamp) {
   return Intl.DateTimeFormat("en-US").format(timeStamp);
 }
 
-function VideoComments({ currentVideo }) {
+function VideoComments({ currentVideo, onNewComment }) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [isNameValid, setIsNameValid] = useState(true);
@@ -34,15 +34,13 @@ function VideoComments({ currentVideo }) {
           name: name,
           comment: comment,
         };
-        const newPostComment = await api.postComment(
-          currentVideo.id,
-          newComment
-        );
-        const newComments = newPostComment.data;
+        await api.postComment(currentVideo.id, newComment);
         setComment("");
         setName("");
         setIsNameValid(true);
         setIsCommentValid(true);
+        onNewComment();
+        console.log("Comment posted successfully.");
       } catch (error) {
         console.log("Failed to post comment: ", error);
       }
