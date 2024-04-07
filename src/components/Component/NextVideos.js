@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NextVideos.css";
 
-function NextVideos({ nextVideos, selectVideo }) {
+function NextVideos({ nextVideos }) {
   return (
     <>
       {/* Next Video Section */}
@@ -12,7 +12,11 @@ function NextVideos({ nextVideos, selectVideo }) {
         </div>
         <div className="next__videos">
           {nextVideos.map((video) => (
-            <Link key={video.id} to={`/videos/${video.id}`} className="next__videos--video">
+            <Link
+              key={video.id}
+              to={`/videos/${video.id}`}
+              className="next__videos--video"
+            >
               <img
                 className="next__videos--video-image"
                 src={video.image}
