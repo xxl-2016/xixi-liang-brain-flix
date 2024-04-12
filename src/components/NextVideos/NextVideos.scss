@@ -17,6 +17,7 @@
     &__videos {
       display: flex;
       flex-wrap: wrap;
+      flex-direction: column;
       text-align: left;
       margin-bottom: 2rem;
       &--video {
