@@ -1,4 +1,4 @@
-import UploadVideo from "../components/Component/UploadVideo";
+import UploadVideo from "../components/UploadVideo/UploadVideo";
 
 function UploadVideoPage() {
   return <UploadVideo />;

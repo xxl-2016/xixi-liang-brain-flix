@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import VideoComments from "../components/Component/VideoComments";
-import CurrentVideo from "../components/Component/CurrentVideo";
-import NextVideos from "../components/Component/NextVideos";
+import VideoComments from "../components/VideoComments/VideoComments";
+import CurrentVideo from "../components/CurrentVideo/CurrentVideo";
+import NextVideos from "../components/NextVideos/NextVideos";
 import { BrainFlixApi } from "../api/BrainFlixApi";
 
 // Store API key
