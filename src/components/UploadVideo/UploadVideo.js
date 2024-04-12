@@ -52,6 +52,7 @@ function UploadVideoPage() {
             />
           </div>
           <div className="upload__video--form">
+            <button className="upload__video--button">UPLOAD IMAGE</button>
             <h3 className="upload__video--subheading">TITLE YOUR VIDEO</h3>
             <input
               className={`upload__video--form-title ${
