@@ -183,6 +183,35 @@
           font-weight: $font-weight-regular;
         }
       }
+      &--interact {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: $mobile-padding-after-headlines;
+        &-delete {
+          font-size: $mobile-font-size-body;
+          margin-left: $mobile-padding-between-components;
+          color: $silver;
+          cursor: pointer;
+          outline: none;
+          border: none;
+          background-color: transparent;
+        }
+        &-like {
+          font-size: $mobile-font-size-body;
+          margin-left: $mobile-padding-between-components;
+          color: $silver;
+          cursor: pointer;
+          outline: none;
+          border: none;
+          background-color: transparent;
+        }
+        &-amount {
+          font-size: $mobile-font-size-body;
+          color: $silver;
+          margin-left: 0.5rem;
+        }
+      }
       &--divider {
         width: 100%;
         height: $divider-size;
@@ -333,6 +362,10 @@
           margin-left: $desktop-padding-between-components;
           left: 5%;
         }
+      }
+      &--interact {
+        width: 100%;
+        margin-right: 2rem;
       }
       &--divider {
         margin-top: 2rem;

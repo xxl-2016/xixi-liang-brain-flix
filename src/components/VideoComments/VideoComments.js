@@ -15,6 +15,7 @@ function formattedDate(timeStamp) {
 function VideoComments({ currentVideo, onNewComment }) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
+  const [like, setLike] = useState(0);
   const [isNameValid, setIsNameValid] = useState(true);
   const [isCommentValid, setIsCommentValid] = useState(true);
 
@@ -45,6 +46,30 @@ function VideoComments({ currentVideo, onNewComment }) {
         console.log("Failed to post comment: ", error);
       }
     }
+  };
+
+  const handleDeleteComment = async (commentId) => {
+    try {
+      await api.deleteComment(currentVideo.id, commentId);
+      const updatedComments = currentVideo.comments.filter(
+        (comment) => comment.id !== commentId
+      );
+      setComment(updatedComments);
+      onNewComment();
+      console.log("Comment deleted successfully.");
+    } catch (error) {
+      console.log("Failed to delete comment: ", error);
+    }
+  };
+
+  const handleLikeComment = (commentId) => {
+    const likedComment = currentVideo.comments.find(
+      (comment) => comment.id === commentId
+    );
+    likedComment.likes++;
+    setLike(likedComment.likes);
+    console.log(likedComment.likes);
+    console.log("Like comment with id: ", commentId);
   };
 
   const handleCommentChange = (event) => {
@@ -150,6 +175,21 @@ function VideoComments({ currentVideo, onNewComment }) {
             </div>
             <div className="comment__card--text">
               <p className="comment__card--text-detail">{comment.comment}</p>
+            </div>
+            <div className="comment__card--interact">
+              <button
+                className="comment__card--interact-delete"
+                onClick={() => handleDeleteComment(comment.id)}
+              >
+                Delete
+              </button>
+              <button
+                className="comment__card--interact-like"
+                onClick={() => handleLikeComment(comment.id)}
+              >
+                Like
+              </button>
+              <p className="comment__card--interact-amount">{comment.likes}</p>
             </div>
             <div className="comment__card--divider"></div>
           </div>

@@ -31,6 +31,10 @@
           margin: 0.3rem 0;
         }
       }
+      &--button {
+        @include mobile-button;
+        background-image: url(../../assets/Icons/upload.svg);
+      }
       &--form {
         &-title {
           width: 100%;
@@ -99,6 +103,10 @@
     }
     &__video {
       margin: $desktop-padding-after-headlines;
+      &--button {
+        width: 30%;
+        margin-top: 2.2rem;
+      }
       &--subheading {
         font-size: $desktop-font-size-label;
       }
@@ -139,14 +147,14 @@
       flex-wrap: wrap;
       align-items: stretch;
       &--current {
-        width: 40%;
+        width: 42%;
         &-image {
           width: 100%;
           margin: 0;
         }
       }
       &--form {
-        width: 60%;
+        width: 58%;
         padding-left: 2rem;
         &-title {
           width: 100%;
@@ -156,7 +164,6 @@
         }
         &-input {
           width: 100%;
-          min-height: 10.2rem;
           &-error {
             border: red solid $form-border;
           }
