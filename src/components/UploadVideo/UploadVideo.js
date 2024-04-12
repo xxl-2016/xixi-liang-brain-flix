@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import uploadImage from "../../assets/Images/Upload-video-preview.jpg";
-import "./UploadVideo.css";
+import "./UploadVideo.scss";
 
 function UploadVideoPage() {
   const [title, setTitle] = useState("");

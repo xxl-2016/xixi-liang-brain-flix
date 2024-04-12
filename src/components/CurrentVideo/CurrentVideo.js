@@ -1,5 +1,5 @@
 import React from "react";
-import "./CurrentVideo.css";
+import "./CurrentVideo.scss";
 
 function CurrentVideo({ currentVideo }) {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./VideoComments.css";
+import "./VideoComments.scss";
 import views from "../../assets/Icons/views.svg";
 import likes from "../../assets/Icons/likes.svg";
 import { BrainFlixApi } from "../../api/BrainFlixApi";
