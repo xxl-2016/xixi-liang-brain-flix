@@ -1,16 +1,13 @@
 import React from "react";
 import "./CurrentVideo.scss";
 
-// // Store API key
-const api = "c31ccc68-d2c8-4700-808f-71f5037605c2";
-
 function CurrentVideo({ currentVideo }) {
   return (
     <>
       <div className="video">
         <video
           className="video__current"
-          src={`${currentVideo.video}?api_key=${api}`}
+          src={`http://localhost:3000${currentVideo.image}`}
           poster={currentVideo.image}
           controls
         ></video>

@@ -3,10 +3,7 @@ import { useParams } from "react-router-dom";
 import VideoComments from "../components/VideoComments/VideoComments";
 import CurrentVideo from "../components/CurrentVideo/CurrentVideo";
 import NextVideos from "../components/NextVideos/NextVideos";
-import { BrainFlixApi } from "../api/BrainFlixApi";
-
-// Store API key
-const api = new BrainFlixApi("c31ccc68-d2c8-4700-808f-71f5037605c2");
+import axios from "axios";
 
 function HomePage() {
   const { videoId } = useParams();
@@ -17,16 +14,19 @@ function HomePage() {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const fetchedVideos = await api.getVideos();
+      const response = await axios.get("/videos");
+      const fetchedVideos = response.data;
       let initialVideo;
       if (videoId) {
-        const fetchedVideoDetail = await api.getVideo(videoId);
-        setCurrentVideoDetail(fetchedVideoDetail);
-        initialVideo = fetchedVideoDetail;
+        const fetchedVideoDetail = await axios.get(`/videos/${videoId}`);
+        setCurrentVideoDetail(fetchedVideoDetail.data);
+        initialVideo = fetchedVideoDetail.data;
       } else {
         initialVideo = fetchedVideos[0];
-        const fetchedVideoDetail = await api.getVideo(initialVideo.id);
-        setCurrentVideoDetail(fetchedVideoDetail);
+        const fetchedVideoDetail = await axios.get(
+          `/videos/${initialVideo.id}`
+        );
+        setCurrentVideoDetail(fetchedVideoDetail.data);
       }
       setCurrentVideo(initialVideo);
       setNextVideos(

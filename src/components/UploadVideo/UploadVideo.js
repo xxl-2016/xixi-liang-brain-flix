@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 import uploadImage from "../../assets/Images/Upload-video-preview.jpg";
 import "./UploadVideo.scss";
 
@@ -20,7 +21,7 @@ function UploadVideoPage() {
     if (!isDescriptionValid) setDescription(true);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (!title.trim()) {
       setIsTitleValid(false);
@@ -31,6 +32,10 @@ function UploadVideoPage() {
       alert("Please enter a description.");
       return;
     } else {
+      const response = axios.post("/videos", {
+        title: title,
+        description: description,
+      });
       alert("Video uploaded successfully.");
       navigate("/");
     }

@@ -59,7 +59,8 @@ function VideoComments({ currentVideo, onNewComment }) {
     }
   };
 
-  const handleLikeComment = (commentId) => {
+  const handleLikeComment = async (commentId) => {
+    await axios.put(`/videos/${currentVideo.id}/comments/${commentId}/likes`);
     const likedComment = currentVideo.comments.find(
       (comment) => comment.id === commentId
     );
