@@ -1,11 +1,8 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./VideoComments.scss";
 import views from "../../assets/Icons/views.svg";
 import likes from "../../assets/Icons/likes.svg";
-import { BrainFlixApi } from "../../api/BrainFlixApi";
-
-// Store API key
-const api = new BrainFlixApi("c31ccc68-d2c8-4700-808f-71f5037605c2");
 
 // Date Format Function
 function formattedDate(timeStamp) {
@@ -35,7 +32,7 @@ function VideoComments({ currentVideo, onNewComment }) {
           name: name,
           comment: comment,
         };
-        await api.postComment(currentVideo.id, newComment);
+        await axios.post(`/videos/${currentVideo.id}/comments`, newComment);
         setComment("");
         setName("");
         setIsNameValid(true);
@@ -50,7 +47,7 @@ function VideoComments({ currentVideo, onNewComment }) {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      await api.deleteComment(currentVideo.id, commentId);
+      await axios.delete(`/videos/${currentVideo.id}/comments/${commentId}`);
       const updatedComments = currentVideo.comments.filter(
         (comment) => comment.id !== commentId
       );
