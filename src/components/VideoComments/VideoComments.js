@@ -38,6 +38,7 @@ function VideoComments({ currentVideo, onNewComment }) {
         setIsNameValid(true);
         setIsCommentValid(true);
         onNewComment();
+        event.target.reset();
         console.log("Comment posted successfully.");
       } catch (error) {
         console.log("Failed to post comment: ", error);

@@ -7,7 +7,7 @@ function CurrentVideo({ currentVideo }) {
       <div className="video">
         <video
           className="video__current"
-          src={`http://localhost:3000${currentVideo.image}`}
+          src={"http://localhost:3000/images/BrainStation Sample Video.mp4"}
           poster={currentVideo.image}
           controls
         ></video>

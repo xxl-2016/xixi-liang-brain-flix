@@ -9,6 +9,7 @@ function UploadVideoPage() {
   const [description, setDescription] = useState("");
   const [isTitleValid, setIsTitleValid] = useState(true);
   const [isDescriptionValid, setIsDescriptionValid] = useState(true);
+  const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
 
   const handleChangeTitle = (event) => {
@@ -19,6 +20,10 @@ function UploadVideoPage() {
   const handleChangeDescription = (event) => {
     setDescription(event.target.value);
     if (!isDescriptionValid) setDescription(true);
+  };
+
+  const handleImageChange = (event) => {
+    setSelectedImage(event.target.files[0]);
   };
 
   const handleSubmit = async (event) => {
@@ -35,6 +40,7 @@ function UploadVideoPage() {
       const response = axios.post("/videos", {
         title: title,
         description: description,
+        image: selectedImage,
       });
       alert("Video uploaded successfully.");
       navigate("/");
@@ -52,12 +58,20 @@ function UploadVideoPage() {
             <h3 className="upload__video--subheading">VIDEO THUMBNAIL</h3>
             <img
               className="upload__video--current-image"
-              src={uploadImage}
+              src={
+                selectedImage ? URL.createObjectURL(selectedImage) : uploadImage
+              }
               alt="upload"
             />
           </div>
           <div className="upload__video--form">
-            <button className="upload__video--button">UPLOAD IMAGE</button>
+            <input
+              className="upload__video--form-input-file"
+              id="upload-input"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+            />
             <h3 className="upload__video--subheading">TITLE YOUR VIDEO</h3>
             <input
               className={`upload__video--form-title ${

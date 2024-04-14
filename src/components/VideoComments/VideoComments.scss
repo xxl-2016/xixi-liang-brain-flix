@@ -329,6 +329,7 @@
   }
   @include desktop {
     margin-bottom: 6rem;
+    width: 100%;
     &__heading {
       &--text {
         margin: $desktop-padding-before-headlines 0 1rem 6rem;
